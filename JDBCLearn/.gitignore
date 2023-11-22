@@ -14,7 +14,7 @@ target/
 
 ### Eclipse ###
 .apt_generated
-.classpath
+.classpathg
 .factorypath
 .project
 .settings

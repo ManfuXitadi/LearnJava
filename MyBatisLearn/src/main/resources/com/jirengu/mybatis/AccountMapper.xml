@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jirengu.mybatis.mapper.AccountMapper">
+    <select id="selectAccount" resultType="com.jirengu.mybatis.Account">
+        select * from account where id = #{id}
+    </select>
+
+    <select id="selectAccountList" resultType="com.jirengu.mybatis.Account">
+        select * from account where money > #{money}
+    </select>
+
+<!--    使用Mapper方式执行SQL时候insert总是报错，因为AccountMapper.xml中的执行标签对不是insert-->
+    <insert id="insertAccount" >
+        insert into account (name,money) values (#{name},#{money})
+    </insert>
+
+    <update id="updateAccount">
+        update account set money = #{money} where id = #{id}
+    </update>
+
+    <delete id="deleteAccount">
+        delete from account where id = #{id}
+    </delete>
+</mapper>

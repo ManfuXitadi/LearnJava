@@ -15,6 +15,6 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="AccountMapper.xml"/>
+        <mapper resource="com/jirengu/mybatis/AccountMapper.xml"/>
     </mappers>
 </configuration>

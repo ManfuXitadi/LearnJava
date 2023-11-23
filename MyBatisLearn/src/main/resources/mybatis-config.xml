@@ -3,18 +3,43 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+    <properties resource="jdbc.properties"/>
+<!--        <property name="driver" value="com.mysql.cj.jdbc.Driver"></property>-->
+<!--        <property name="url" value="jdbc:mysql://127.0.0.1:3306/school"></property>-->
+<!--        <property name="username" value="root"></property>-->
+<!--        <property name="password" value="rootroot"></property>-->
+<!--    </properties>-->
+
+<!--    第一种配置typeAliases：直接将要配置的类卸载typeAliases标签下-->
+    <typeAliases>
+<!--        一个个配繁琐-->
+<!--        <typeAlias type="com.jirengu.mybatis.pojo.Account" alias="Account"/>-->
+<!--            可以直接将pojo类放到这里，下次要用到pojo类的全限定类名，直接类名即可-->
+            <package name="com.jirengu.mybatis.pojo"/>
+    </typeAliases>
+
+
+
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
-                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://127.0.0.1:3306/school"/>
-                <property name="username" value="root"/>
-                <property name="password" value="rootroot"/>
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
             </dataSource>
         </environment>
     </environments>
     <mappers>
-        <mapper resource="com/jirengu/mybatis/AccountMapper.xml"/>
+<!--        第一种配置mapper方式，使用相对于类路径的资源引用-->
+<!--        <mapper resource="com/jirengu/mybatis/AccountMapper.xml"/>-->
+<!--            第二种 使用映射器接口的完全限定类名  -->
+
+<!--            <mapper class="com.jirengu.mybatis.mapper.AccountMapper"/>-->
+<!--            第三种 将包内的映射器接口全部注册为映射器-->
+            <package name="com.jirengu.mybatis.mapper"/>
+
     </mappers>
+
 </configuration>

@@ -1,7 +1,7 @@
 package com.jirengu.mybatis;
 
 import com.jirengu.mybatis.mapper.AccountMapper;
-import com.jirengu.mybatis.mapper.AccountMapperImpl;
+import com.jirengu.mybatis.pojo.Account;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;

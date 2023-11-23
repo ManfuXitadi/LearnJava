@@ -3,11 +3,11 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jirengu.mybatis.mapper.AccountMapper">
-    <select id="selectAccount" resultType="com.jirengu.mybatis.Account">
+    <select id="selectAccount" resultType="Account">
         select * from account where id = #{id}
     </select>
 
-    <select id="selectAccountList" resultType="com.jirengu.mybatis.Account">
+    <select id="selectAccountList" resultType="Account">
         select * from account where money > #{money}
     </select>
 

@@ -1,4 +1,4 @@
-package com.jirengu.mybatis;
+package com.jirengu.mybatis.pojo;
 
 public class Account {
 

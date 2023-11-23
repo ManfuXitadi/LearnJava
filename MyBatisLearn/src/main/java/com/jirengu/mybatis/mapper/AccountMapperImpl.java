@@ -1,6 +1,6 @@
 package com.jirengu.mybatis.mapper;
 
-import com.jirengu.mybatis.Account;
+import com.jirengu.mybatis.pojo.Account;
 import org.apache.ibatis.session.SqlSession;
 
 import java.util.List;
